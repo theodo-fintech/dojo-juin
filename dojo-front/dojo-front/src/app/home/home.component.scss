@@ -1,0 +1,90 @@
+.container {
+  padding: 130px 96px;
+
+  display: flex;
+  gap: 80px;
+
+  color: white;
+
+  .balance {
+    padding: 80px;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+
+    background: #5735c7;
+    border-radius: 30px;
+
+    font-weight: 700;
+
+    height: fit-content;
+
+    h1 {
+      margin-bottom: 48px;
+      font-size: 64px;
+    }
+
+    .amount-value {
+      font-size: 64px;
+    }
+
+    .error-message {
+      font-size: 1.1em;
+    }
+  }
+
+  .transactions {
+    padding: 48px;
+
+    flex: 3;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #111139;
+    border-radius: 30px;
+
+    h1 {
+      margin-bottom: 48px;
+
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    .table {
+      display: flex;
+      flex-direction: column;
+
+      .header {
+        margin-bottom: 24px;
+
+        display: flex;
+        gap: 48px;
+
+        font-size: 24px;
+        font-weight: 700;
+
+        .date {
+          flex: 1;
+        }
+
+        .label {
+          flex: 2;
+        }
+
+        .value {
+          flex: 1;
+        }
+      }
+
+      app-transaction:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

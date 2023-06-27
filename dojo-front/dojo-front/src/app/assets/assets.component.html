@@ -1,0 +1,25 @@
+<div class="assets">
+  <div class="assets__list">
+    <div>
+      <h1 class="list-title">Vos biens immobiliers</h1>
+    </div>
+    <div class="assets__cards">
+      <div *ngFor="let apartment of apartments" class="assets__card">
+        <app-realty-card [realty]="apartment"></app-realty-card>
+      </div>
+    </div>
+  </div>
+  <div class="assets__list">
+    <div>
+      <h1 class="list-title">Vos investissements</h1>
+    </div>
+    <div class="assets__cards">
+      <div
+        *ngFor="let participative of participatives"
+        class="assets__card"
+      >
+        <app-realty-card [realty]="participative"></app-realty-card>
+      </div>
+    </div>
+  </div>
+</div>

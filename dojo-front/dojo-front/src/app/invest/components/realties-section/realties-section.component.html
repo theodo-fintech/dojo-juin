@@ -1,0 +1,26 @@
+<ng-template #noAvailableRealty>
+  <p class="summary">
+    Aucun bien correspondant à vos critères n'est à vendre !
+  </p>
+</ng-template>
+
+<ng-container *ngIf="realties.length; else noAvailableRealty">
+  <p class="summary">
+    <strong>{{ realties.length }} biens</strong> à vendre en Île-de-France
+    correspondant à vos critères
+  </p>
+  <div class="property-cards">
+    <div *ngFor="let realty of pagedRealties" class="property-cards__card">
+      <app-realty-card [realty]="realty"></app-realty-card>
+    </div>
+  </div>
+  <mat-paginator
+    (page)="handlePageEvent($event)"
+    [length]="realties.length"
+    [pageSize]="pageSize"
+    [hidePageSize]="true"
+    aria-label="Sélectionnez une page"
+    class="paginator"
+  >
+  </mat-paginator>
+</ng-container>

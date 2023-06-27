@@ -1,0 +1,28 @@
+<div class="invest">
+  <div class="invest__filter">
+    <mat-card class="mat-card">
+      <mat-card-content class="filter__content">
+        <form [formGroup]="filtersForm">
+          <mat-form-field>
+            <mat-label>Type de biens :</mat-label>
+            <mat-select formControlName="type">
+              <mat-option value="" selected disabled
+                >Veuillez choisir un type de bien</mat-option
+              >
+              <mat-option [value]="REALTY_TYPE.APARTMENT"
+                >Appartement</mat-option
+              >
+              <mat-option [value]="REALTY_TYPE.PARTICIPATIVE"
+                >Investissement participatif</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <app-realties-section
+    *ngIf="availableRealties$ | async as availableRealties"
+    [realties]="availableRealties"
+  ></app-realties-section>
+</div>

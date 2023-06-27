@@ -1,0 +1,7 @@
+<div class="row">
+  <span class="date">{{ date | date : "shortDate" }}</span>
+  <span class="label">{{ label }}</span>
+  <span class="value" [class.green]="value >= 0">{{
+    value | currency : "EUR" : "symbol" : "1.2-2" | money
+  }}</span>
+</div>

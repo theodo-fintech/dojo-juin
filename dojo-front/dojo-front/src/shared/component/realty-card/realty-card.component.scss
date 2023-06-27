@@ -1,0 +1,38 @@
+.property-card {
+  background-color: #693dfb;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px 0 #000000;
+
+  &.scoring-defects {
+    opacity: 0.6;
+  }
+
+  img {
+    border-radius: 8px;
+  }
+
+  &__card-content {
+    display: flex;
+    position: relative;
+    height: 130px;
+
+    .card-content__description,
+    .card-content__picture {
+      align-self: center;
+      width: 50%;
+      height: inherit;
+      margin-inline: 15px;
+    }
+  }
+}
+
+.warning-message {
+  text-align: center;
+  background-color: #111139;
+  border-radius: 10px;
+  font-weight: bold;
+  font-style: italic;
+  z-index: 1001;
+  margin: 10px;
+}

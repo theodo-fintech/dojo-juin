@@ -1,0 +1,48 @@
+.navbar {
+  background-color: #111139;
+  height: 55px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+
+  padding: 10px 20px;
+
+  &__logo {
+    align-self: center;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    align-items: center;
+
+    .item {
+      color: white;
+
+      &:not(:last-child){
+        padding-inline: 20px;
+      }
+      &:last-child{
+        padding-left: 20px;
+      }
+
+      &:hover{
+        text-decoration: underline;
+        text-decoration-color: #5735C7;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 4px;
+
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+}

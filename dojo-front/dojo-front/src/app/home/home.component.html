@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="balance">
+    <h1>Solde</h1>
+    <ng-container *ngIf="amount$ | async; else emptyAmount">
+      <span class="amount-value">{{ amount$ | async | currency : "EUR" : "symbol" : "1.0-0" }}</span>
+    </ng-container>
+  </div>
+  <div class="transactions">
+    <h1>Transactions</h1>
+    <div class="table">
+      <div class="header">
+        <span class="date">Date</span>
+        <span class="label">Libellé</span>
+        <span class="value">Montant</span>
+      </div>
+      <app-transaction
+        *ngFor="let transaction of transactions$ | async"
+        [date]="transaction.date"
+        [label]="transaction.label"
+        [value]="transaction.value"
+      ></app-transaction>
+    </div>
+  </div>
+</div>
+
+<ng-template #emptyAmount>
+  <span class="error-message">⚠️Error : votre solde est vide !⚠️</span>
+</ng-template>

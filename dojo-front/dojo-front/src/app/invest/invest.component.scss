@@ -1,0 +1,26 @@
+.invest {
+  width: 90%;
+  margin-inline: 5%;
+
+  .mat-card {
+    background-color: #12123d;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px 0 #000000;
+
+    * {
+      color: white;
+      font-size: large;
+    }
+  }
+
+  &__filter {
+    margin-block: 3%;
+    padding-inline: 20%;
+  }
+
+  .filter__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}

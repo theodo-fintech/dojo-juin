@@ -1,0 +1,17 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: #011031;
+  color: white;
+}
+
+* {
+  font-family: Inter, "Helvetica Neue", sans-serif !important;
+}
+
+.mat-raised-button.mat-primary {
+  background-color: #111139;
+}

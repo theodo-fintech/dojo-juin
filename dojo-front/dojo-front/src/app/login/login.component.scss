@@ -1,0 +1,48 @@
+::ng-deep {
+  .mat-card {
+    .mat-form-field-underline .mat-form-field-appearance-legacy {
+      background-color: white;
+    }
+
+    .mat-raised-button.mat-primary {
+      background-color: #693dfb;
+    }
+
+    * {
+      color: white;
+    }
+  }
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  width: 25%;
+  height: 30%;
+  margin: 10% 37.5%;
+  background-color: #12123d;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px 0 #000000;
+
+  &__title {
+    place-content: center;
+  }
+
+  &__content {
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content-form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__actions {
+    text-align: center;
+  }
+}

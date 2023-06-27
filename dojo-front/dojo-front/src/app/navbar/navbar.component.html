@@ -1,0 +1,12 @@
+<div class="navbar">
+  <div class="navbar__logo" routerLink="/">
+    <img src="../../assets/logo_sipios_white.svg" alt="sipios_logo" />
+  </div>
+  <div *ngIf="isLoggedIn$ | async">
+    <ul class="navbar__items">
+      <li class="item" routerLink="/">Accueil</li>
+      <li class="item" routerLink="/invest">Investir</li>
+      <li class="item" routerLink="/assets">Mes biens</li>
+    </ul>
+  </div>
+</div>

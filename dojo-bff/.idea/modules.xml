@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/dojo-bff.iml" filepath="$PROJECT_DIR$/.idea/dojo-bff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dojo-real-estate-bff-application-with-bugs/dojo-real-estate-bff.iml" filepath="$PROJECT_DIR$/dojo-real-estate-bff-application-with-bugs/dojo-real-estate-bff.iml" />
+    </modules>
+  </component>
+</project>

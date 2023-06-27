@@ -1,0 +1,18 @@
+.assets {
+  &__list {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+
+    .assets__cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .assets__card {
+        padding: 1%;
+        flex: 0 1 31%
+      }
+    }
+  }
+}

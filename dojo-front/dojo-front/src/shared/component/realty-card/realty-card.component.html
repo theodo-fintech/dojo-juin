@@ -1,0 +1,40 @@
+<mat-card [ngClass]="realty.rent === 0 ? 'scoring-defects':''" class="property-card">
+  <mat-card-content class="property-card__card-content">
+    <img
+      [src]="'assets/images/' + realty.image"
+      alt=""
+      class="card-content__picture"
+    />
+    <div class="card-content__description">
+      <p>
+        <strong>{{ realty.amount }} €</strong>
+      </p>
+      <p>{{ realty.deedType }}</p>
+      <p>Loyer: {{ realty.rent }} €</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="end" class="property-card__card-actions">
+    <ng-container *ngIf="realty.rent > 0; else alertMessage">
+      <button
+        (click)="buyProperty()"
+        *ngIf="router.url.includes('invest')"
+        color="primary"
+        mat-raised-button
+      >
+        Acheter
+      </button>
+      <ng-container *ngIf="router.url.includes('assets')">
+        <button (click)="sellProperty()" color="primary" mat-raised-button>
+          Vendre
+        </button>
+        <button *ngIf="realty.rent === 0" color="primary" mat-raised-button>
+          Rénover
+        </button>
+      </ng-container>
+    </ng-container>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #alertMessage>
+  <div class="warning-message">Votre bien est une passoire énergétique, pensez à le rénover</div>
+</ng-template>

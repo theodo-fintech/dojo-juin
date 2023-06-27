@@ -1,0 +1,29 @@
+:host {
+  margin-bottom: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 48px;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  .date {
+    flex: 1;
+  }
+
+  .label {
+    flex: 2;
+  }
+
+  .value {
+    flex: 1;
+
+    font-weight: 700;
+  }
+}
+
+.green {
+  color: #298a19;
+}

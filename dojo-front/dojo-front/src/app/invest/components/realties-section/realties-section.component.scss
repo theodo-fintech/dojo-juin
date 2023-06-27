@@ -1,0 +1,36 @@
+.summary {
+  text-align: center;
+}
+
+.property-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__card {
+    padding: 1%;
+    flex: 0 1 31%;
+  }
+}
+
+.paginator {
+  background-color: #011031;
+  position: sticky;
+  width: 15%;
+  left: 80%;
+  bottom: 2%;
+}
+
+::ng-deep {
+  .mat-paginator-container {
+    background-color: #12123d;
+
+    * {
+      color: white;
+    }
+  }
+
+  .mat-select-min-line {
+    color: white;
+  }
+}
