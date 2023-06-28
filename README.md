@@ -8,17 +8,17 @@ déboguer votre site pour débloquer des fonctionnalités ou même en développe
 ## Cela se déroulera en 4 étapes :
 
 - Votre solde n’évolue pas ? Essayons de comprendre pourquoi...
-    - L'affichage du solde semble bloquée ! Est-ce un problème front ? Back ? Ou les deux peut-être ...
+    - L'affichage du solde semble bloqué ! Est-ce un problème front ? Back ? Ou les deux peut-être ...
 - Devenez propriétaire de votre premier bien et arrêtez de vivre dans une location !
     - Mais pour ça encore faudrait-il avoir accès aux autres pages !
-    - Vous pouvez acheter des biens paricipatifs ? C'est bien, mais acheter un appartement, c'est mieux ! Comment ça
+    - Vous pouvez acheter des biens participatifs ? C'est bien, mais acheter un appartement, c'est mieux ! Comment ça
       votre liste ne vous montre que les plus chers ?
 - Commencez à acheter vos premiers appartements.
     - Au vu des prix des appartements, il serait peut-être bon de vendre vos premières acquisitions ! Je vous conseille
       de regarder un peu plus bas...
-- Les loyers stagnent... Oups, nous avons peut-être omis une information !
+- Vous ne percevez plus de loyers... Oups, nous avons peut-être omis une information !
     - Un utilisateur nous a prévenus que les loyers stagnaient au bout d'un moment. Il nous parlait de "passoire
-      énergétique". Il faudrait peut-être investiguer dans cette direction
+      énergétique". Il faudrait peut-être investiguer dans cette direction.
     - Apparemment un document fourni est incomplet, n'hésitez pas à andon !
 
 ## Méthodologie
@@ -32,9 +32,9 @@ sentez bloqué ou que vous avez une question, interpellez nous !
 # Setup
 
 - Pour le front, ouvrez dans VSCode (ou autre IDE front) le dossier `dojo-front/dojo-front`, faites `npm i`,
-  puis `ng serve --open` (si cela ne marche pas, lancer via le package.json)
+  puis `ng serve --open` (si cela ne marche pas, lancez via le package.json)
 - Pour le back, ouvrez dans votre Intellij (ou autre IDE back) le dossier `dojo-bff/dojo-bff`. Il va normalement comprendre
-  d'office que c'est un projet Maven. Faites la commande `mvn clean install` depuis votre console ou votre IDE. Pour le lancer, dans le fichier `RealEstateBffApplication`, cliquer sur
+  d'office que c'est un projet Maven. Faites la commande `mvn clean install` depuis votre console ou votre IDE. Pour lancer le back, dans le fichier `RealEstateBffApplication`, cliquez sur
   le run à côté de la méthode main.
 
 # Schéma d'archi
