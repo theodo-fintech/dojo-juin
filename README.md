@@ -43,7 +43,7 @@ sentez bloqué ou que vous avez une question, interpellez nous !
 
 # Aide
 
-```{ "openapi":"3.0.0", "paths":{ "/":{ "get":{ "operationId":"AppController_getHello", "parameters":[ ], "responses":{ "
+{ "openapi":"3.0.0", "paths":{ "/":{ "get":{ "operationId":"AppController_getHello", "parameters":[ ], "responses":{ "
 200":{ "description":"Get API health" } }, "tags":[ "Health" ] } }, "/users/me":{ "get":{ "operationId":"
 UsersController_getProfile", "parameters":[ ], "responses":{ "200":{ "description":"Return logged user", "content":{ "
 application/json":{ "schema":{ "$ref":"#/components/schemas/User" } } } } }, "tags":[ "Users" ] } }, "/users/amount":{ "
@@ -86,4 +86,3 @@ properties":{ "transactionId":{ "type":"number" }, "userId":{ "type":"number" },
 amount":{ "type":"number" }, "createdAt":{ "format":"date-time", "type":"string" }, "realty":{ "$ref":"
 #/components/schemas/Realty" } }, "required":[ "transactionId", "userId", "amount", "createdAt" ] }, "SignInDto":{ "
 type":"object", "properties":{ "email":{ "type":"string" } }, "required":[ "email" ] } } } }
-```
