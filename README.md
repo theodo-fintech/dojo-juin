@@ -19,7 +19,6 @@ déboguer votre site pour débloquer des fonctionnalités ou même en développe
 - Vous ne percevez plus de loyers... Oups, nous avons peut-être omis une information !
     - Un utilisateur nous a prévenus que les loyers stagnaient au bout d'un moment. Il nous parlait de "passoire
       énergétique". Il faudrait peut-être investiguer dans cette direction.
-    - Apparemment un document fourni est incomplet, n'hésitez pas à andon !
 
 ## Méthodologie
 
@@ -30,6 +29,7 @@ dans les deux sens, même Thibault, l’EM ici présent, Andon des développeurs
 sentez bloqué ou que vous avez une question, interpellez nous !
 
 # Setup
+
 Ouvrir un nouveau codespace puis : 
 
 Démarrer le back
