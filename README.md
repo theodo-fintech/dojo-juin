@@ -30,12 +30,21 @@ dans les deux sens, même Thibault, l’EM ici présent, Andon des développeurs
 sentez bloqué ou que vous avez une question, interpellez nous !
 
 # Setup
+Ouvrir un nouveau codespace puis : 
 
-- Pour le front, ouvrez dans VSCode (ou autre IDE front) le dossier `dojo-front/dojo-front`, faites `npm i`,
-  puis `ng serve --open` (si cela ne marche pas, lancez via le package.json)
-- Pour le back, ouvrez dans votre Intellij (ou autre IDE back) le dossier `dojo-bff/dojo-bff`. Il va normalement comprendre
-  d'office que c'est un projet Maven. Faites la commande `mvn clean install` depuis votre console ou votre IDE. Pour lancer le back, dans le fichier `RealEstateBffApplication`, cliquez sur
-  le run à côté de la méthode main.
+Démarrer le back
+- Ouvrir un nouveau terminal
+- Rendez vous à la source du projet back `cd dojo-bff/dojo-bff`
+- Lancer la commandes `sdk install java`
+- Lorsque l’on vous demande si vous voulez utiliser java 17 en tant que version par défaut : répondre « oui ».
+- Lancer le projet avec `mvn spring-boot:run`
+
+Démarrer le front
+- Ouvrir un nouveau terminal
+- Rendez vous à la source du projet front `cd dojo-front/dojo-front`
+- Lancer la commande `npm install`
+- Lancer le frontend avec  `npm run start`
+
 
 # Schéma d'archi
 
