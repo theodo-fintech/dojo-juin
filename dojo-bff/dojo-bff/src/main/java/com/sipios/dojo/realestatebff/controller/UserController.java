@@ -27,7 +27,7 @@ public class UserController {
         return  userAmountMapper.from(userService.getUserAmountDTOService());
     }
 
-    @GetMapping("score")
+    @GetMapping("level")
     public UserLevelDTO getUserLevel() {
         return userLevelMapper.from(userService.getCurrentUserLevel());
     }
