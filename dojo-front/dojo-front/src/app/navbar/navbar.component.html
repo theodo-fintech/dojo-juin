@@ -11,7 +11,7 @@
     </ul>
   </div>
   <mat-menu #menu="matMenu">
-    <ng-container *ngIf="score$ | async as score">
+    <ng-container *ngIf="score$ | async as score; else noScore">
       <div class="navbar__score">
         <div class="navbar__score--item">
           Votre score {{ score.currentUser }}
@@ -24,5 +24,10 @@
         </div>
       </div>
     </ng-container>
+    <ng-template #noScore>
+      <div class="navbar__score">
+        <div class="navbar__score--item">Loading...</div>
+      </div>
+    </ng-template>
   </mat-menu>
 </div>
