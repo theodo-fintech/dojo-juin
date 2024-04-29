@@ -24,7 +24,6 @@ public class UserService {
     }
 
     public UserLevel getCurrentUserLevel() {
-        User user = apiClient.retrieveCurrentUser();
-        return new UserLevel(user.level());
+        return new UserLevel(apiClient.retrieveCurrentUser().level());
     }
 }
