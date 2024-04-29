@@ -25,6 +25,8 @@ import { InvestComponent } from './invest/invest.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './login/services/auth.interceptor';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InstructionComponent } from './instruction/instruction.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { MatMenuModule } from '@angular/material/menu';
 
 registerLocaleData(localeFr);
@@ -40,6 +42,7 @@ registerLocaleData(localeFr);
     MoneyPipe,
     LoginComponent,
     RealtiesSectionComponent,
+    InstructionComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ registerLocaleData(localeFr);
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     MatButtonModule,
     MatMenuModule,
