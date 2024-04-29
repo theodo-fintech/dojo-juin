@@ -34,10 +34,12 @@ public class ApiClient {
     public ResponseEntity<Void> login(CredentialDTO credentialDTO) {
         return  getWebClient().post().uri("auth/login").body(BodyInserters.fromValue(credentialDTO)).retrieve().toBodilessEntity().block();
     }
+
     private Cookie retrieveAccessCookie() {
         var attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         return Arrays.stream(attributes.getRequest().getCookies()).filter(c -> c.getName().equals("access_token")).findFirst().orElse(null);
     }
+
     private WebClient getWebClient() {
         return apiClientBuilder.build();
     }
@@ -52,7 +54,7 @@ public class ApiClient {
         return new User(user.id(), user.mail());
     }
 
-    public void buyRealty(BuyRealty buyRealty){
+    public void buyRealty(BuyRealty buyRealty) {
         WebClient webClient = getWebClient();
         BuyRealtyDto buyRealtyDto = new BuyRealtyDto(buyRealty.realtyId());
         webClient.post().uri("realties/buy")
@@ -95,5 +97,11 @@ public class ApiClient {
         WebClient webClient = getWebClient();
         return webClient.get().uri("users/amount")
                 .cookie("access_token", retrieveAccessCookie().getValue()).retrieve().bodyToMono(AmountDto.class).block();
+    }
+
+    public UserScore retrieveUserScore(String id) {
+        WebClient webClient = getWebClient();
+        return webClient.get().uri("users/score", id)
+                .cookie("access_token", retrieveAccessCookie().getValue()).retrieve().bodyToMono(UserScore.class).block();
     }
 }
