@@ -8,6 +8,10 @@ import { Asset } from '../interfaces/asset.interface';
   providedIn: 'root',
 })
 export class UserService {
+  fetchUserScore(): Observable<any> {
+    return this.http
+      .get<any>('/bff/user/score')
+  }
   constructor(private http: HttpClient) {}
 
   fetchUserAmount(): Observable<number> {
