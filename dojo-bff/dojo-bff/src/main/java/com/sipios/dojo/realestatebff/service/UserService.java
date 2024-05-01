@@ -2,9 +2,9 @@ package com.sipios.dojo.realestatebff.service;
 
 
 import com.sipios.dojo.realestatebff.client.ApiClient;
-import com.sipios.dojo.realestatebff.service.model.Realty;
 import com.sipios.dojo.realestatebff.service.model.User;
 import com.sipios.dojo.realestatebff.service.model.UserAmount;
+import com.sipios.dojo.realestatebff.service.model.UserLevel;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -23,4 +23,7 @@ public class UserService {
         return new UserAmount(user.id(), BigDecimal.ZERO);
     }
 
+    public UserLevel getCurrentUserLevel() {
+        return new UserLevel(apiClient.retrieveCurrentUser().level());
+    }
 }

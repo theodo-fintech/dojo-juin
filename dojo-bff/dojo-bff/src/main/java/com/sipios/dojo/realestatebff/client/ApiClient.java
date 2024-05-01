@@ -49,7 +49,7 @@ public class ApiClient {
         .uri("users/me")
         .cookie("access_token", retrieveAccessCookie().getValue())
         .retrieve().bodyToMono(UserDto.class).block();
-        return new User(user.id(), user.mail());
+        return new User(user.id(), user.mail(), user.level());
     }
 
     public void buyRealty(BuyRealty buyRealty){
