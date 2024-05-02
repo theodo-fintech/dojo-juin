@@ -22,6 +22,6 @@ export class NavbarComponent {
     this.score$ = this.userService.fetchUserScore();
     setInterval(() => {
       this.score$ = this.userService.fetchUserScore();
-    }, 60000);
+    }, 60_000 * 3);
   }
 }
