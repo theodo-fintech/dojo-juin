@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map, of, delay } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { UserAmount } from '../interfaces/amount.interface';
 import { Asset } from '../interfaces/asset.interface';
+import {UserLevel} from "../interfaces/user-level.interface";
 import { Score } from 'src/app/navbar/interfaces/score.interface';
 
 @Injectable({
@@ -22,7 +23,9 @@ export class UserService {
   }
 
   getUserLevel(): Observable<number> {
-    return of(2).pipe(delay(1000));
+    return this.http
+      .get<UserLevel>('/bff/user/level')
+      .pipe(map((response) => response.level));
   }
 
   fetchUserRealties(): Observable<Asset[]> {
