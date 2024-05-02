@@ -3,14 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { UserAmount } from '../interfaces/amount.interface';
 import { Asset } from '../interfaces/asset.interface';
+import { Score } from 'src/app/navbar/interfaces/score.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  fetchUserScore(): Observable<any> {
+  fetchUserScore(): Observable<Score> {
     return this.http
-      .get<any>('/bff/user/score')
+      .get<Score>('/bff/user/score')
   }
   constructor(private http: HttpClient) {}
 
