@@ -43,7 +43,7 @@ public class ApiClient {
     }
 
     public User retrieveCurrentUser() {
-        WebClient webClient = getWebClient();
+        final WebClient webClient = getWebClient();
         var user = webClient
         .get()
         .uri("users/me")
@@ -52,8 +52,8 @@ public class ApiClient {
         return new User(user.id(), user.mail(), user.level());
     }
 
-    public void buyRealty(BuyRealty buyRealty){
-        WebClient webClient = getWebClient();
+    public void buyRealty(BuyRealty buyRealty) {
+        final WebClient webClient = getWebClient();
         BuyRealtyDto buyRealtyDto = new BuyRealtyDto(buyRealty.realtyId());
         webClient.post().uri("realties/buy")
                 .cookie("access_token", retrieveAccessCookie().getValue()).body(BodyInserters.fromValue(buyRealtyDto)).retrieve().toBodilessEntity().block();
@@ -64,7 +64,7 @@ public class ApiClient {
 
 
     public List<Realty> retrieveAllRealties(String deedtype) {
-        WebClient webClient = getWebClient();
+        final WebClient webClient = getWebClient();
         List<Realty> allRealities;
 
         if (deedtype != null ) {
@@ -80,20 +80,26 @@ public class ApiClient {
     }
 
     public List<Transaction> retrieveAllTransactions() {
-        WebClient webClient = getWebClient();
+        final WebClient webClient = getWebClient();
         return webClient.get().uri("transactions")
                 .cookie("access_token", retrieveAccessCookie().getValue()).retrieve().bodyToFlux(Transaction.class).collectList().block();
     }
 
     public List<Asset> retrieveAllAssets() {
-        WebClient webClient = getWebClient();
+        final WebClient webClient = getWebClient();
         return webClient.get().uri("assets")
                 .cookie("access_token", retrieveAccessCookie().getValue()).retrieve().bodyToFlux(Asset.class).collectList().block();
     }
 
     public AmountDto retrieveUserAmount() {
-        WebClient webClient = getWebClient();
+        final WebClient webClient = getWebClient();
         return webClient.get().uri("users/amount")
                 .cookie("access_token", retrieveAccessCookie().getValue()).retrieve().bodyToMono(AmountDto.class).block();
+    }
+
+    public UserScore retrieveUserScore(String id) {
+        final WebClient webClient = getWebClient();
+        return webClient.get().uri("users/score", id)
+                .cookie("access_token", retrieveAccessCookie().getValue()).retrieve().bodyToMono(UserScore.class).block();
     }
 }
