@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../login/services/auth.service';
+import { Score } from './interfaces/score.interface';
+import { Observable } from 'rxjs';
+import { UserService } from '../home/services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,5 +11,17 @@ import { AuthService } from '../login/services/auth.service';
 })
 export class NavbarComponent {
   isLoggedIn$ = this.authService.isLoggedIn$;
-  constructor(private authService: AuthService) {}
+  score$!: Observable<Score>;
+
+  constructor(
+    private authService: AuthService,
+    private userService: UserService
+  ) {}
+
+  ngOnInit() {
+    this.score$ = this.userService.fetchUserScore();
+    setInterval(() => {
+      this.score$ = this.userService.fetchUserScore();
+    }, 60_000 * 3);
+  }
 }

@@ -17,6 +17,17 @@
     }
   }
 
+  &__score {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  &__score--item {
+    color: black
+  }
+
   &__items {
     display: flex;
     flex-direction: row;

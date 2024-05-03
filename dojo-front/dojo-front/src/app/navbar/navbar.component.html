@@ -4,9 +4,30 @@
   </div>
   <div *ngIf="isLoggedIn$ | async">
     <ul class="navbar__items">
+      <li class="item" [matMenuTriggerFor]="menu" aria-label="Score">Score</li>
       <li class="item" routerLink="/">Accueil</li>
       <li class="item" routerLink="/invest">Investir</li>
       <li class="item" routerLink="/assets">Mes biens</li>
     </ul>
   </div>
+  <mat-menu #menu="matMenu">
+    <ng-container *ngIf="score$ | async as score; else noScore">
+      <div class="navbar__score">
+        <div class="navbar__score--item">
+          Votre score {{ score.currentUser }}
+        </div>
+        <div class="navbar__score--item" *ngIf="score.userAbove">
+          Score devant vous {{ score.userAbove }}
+        </div>
+        <div class="navbar__score--item" *ngIf="score.userBelow">
+          Score derrière vous: {{ score.userBelow }}
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noScore>
+      <div class="navbar__score">
+        <div class="navbar__score--item">Loading...</div>
+      </div>
+    </ng-template>
+  </mat-menu>
 </div>

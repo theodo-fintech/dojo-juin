@@ -25,6 +25,7 @@ import { InvestComponent } from './invest/invest.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './login/services/auth.interceptor';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 registerLocaleData(localeFr);
 
@@ -53,6 +54,7 @@ registerLocaleData(localeFr);
     MatInputModule,
     HttpClientModule,
     MatButtonModule,
+    MatMenuModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR' },
