@@ -1,0 +1,22 @@
+.instruction-container {
+  padding: 32px;
+  display: grid;
+
+  &-body {
+    padding-left: 16px;
+    padding-right: 10%;
+  }
+
+  .player-level {
+    background: #5735c7;
+    border-radius: 15px;
+    padding: 32px;
+    width: fit-content;
+    justify-self: end;
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+}

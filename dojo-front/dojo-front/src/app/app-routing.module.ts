@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/shared/guard/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import {InstructionComponent} from "./instruction/instruction.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'assets',
     component: HomeComponent,
+  },
+  {
+    path: 'instructions',
+    component: InstructionComponent,
   },
   {
     path: 'login',
