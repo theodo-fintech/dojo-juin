@@ -4,6 +4,7 @@ package com.sipios.dojo.realestatebff.service;
 import com.sipios.dojo.realestatebff.client.ApiClient;
 import com.sipios.dojo.realestatebff.service.model.User;
 import com.sipios.dojo.realestatebff.service.model.UserAmount;
+import com.sipios.dojo.realestatebff.service.model.UserScore;
 import com.sipios.dojo.realestatebff.service.model.UserLevel;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +26,9 @@ public class UserService {
 
     public UserLevel getCurrentUserLevel() {
         return new UserLevel(apiClient.retrieveCurrentUser().level());
+    }
+    public UserScore getUserScore() {
+        User user = apiClient.retrieveCurrentUser();
+        return apiClient.retrieveUserScore(user.id());
     }
 }
