@@ -16,8 +16,8 @@ export class TransactionService {
           date: transaction.createdAt,
           label: transaction.realty.label,
           value: transaction.amount,
-        }))
-      )
+        })),
+      ),
     );
   }
 }

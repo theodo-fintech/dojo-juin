@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {map, take} from 'rxjs';
+import { map, take } from 'rxjs';
 import { REALTY_TYPE, Realty } from '../../shared/interface/realty';
 import { UserService } from '../home/services/user.service';
 
@@ -12,15 +12,13 @@ export class OwnedRealtiesComponent implements OnInit {
   apartments: Realty[] = [];
   participatives: Realty[] = [];
 
-  constructor(
-    private userService: UserService
-  ) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.fetchRealties()
+    this.fetchRealties();
   }
 
-  private fetchRealties(){
+  private fetchRealties() {
     this.userService
       .fetchUserRealties()
       .pipe(map((assets) => assets.map((asset) => asset.realty)))
@@ -28,11 +26,11 @@ export class OwnedRealtiesComponent implements OnInit {
       .subscribe((realties) => {
         this.apartments = this.filterRealtiesByType(
           realties,
-          REALTY_TYPE.APARTMENT
+          REALTY_TYPE.APARTMENT,
         );
         this.participatives = this.filterRealtiesByType(
           realties,
-          REALTY_TYPE.PARTICIPATIVE
+          REALTY_TYPE.PARTICIPATIVE,
         );
       });
   }
@@ -42,6 +40,6 @@ export class OwnedRealtiesComponent implements OnInit {
   }
 
   refreshRealties() {
-    this.fetchRealties()
+    this.fetchRealties();
   }
 }

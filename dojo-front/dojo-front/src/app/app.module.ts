@@ -20,12 +20,12 @@ import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './login/services/auth.interceptor';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InstructionComponent } from './instruction/instruction.component';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatCardModule} from "@angular/material/card";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatSelectModule} from "@angular/material/select";
-import {MatPaginatorModule} from "@angular/material/paginator";
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 registerLocaleData(localeFr);
 

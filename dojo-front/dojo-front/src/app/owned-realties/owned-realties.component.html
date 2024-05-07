@@ -5,7 +5,10 @@
     </div>
     <div class="assets__cards">
       <div *ngFor="let apartment of apartments" class="assets__card">
-        <app-realty-card [realty]="apartment" (realtyUpdated)="refreshRealties()"></app-realty-card>
+        <app-realty-card
+          [realty]="apartment"
+          (realtyUpdated)="refreshRealties()"
+        ></app-realty-card>
       </div>
     </div>
   </div>
@@ -14,10 +17,7 @@
       <h1 class="list-title">Vos investissements participatifs</h1>
     </div>
     <div class="assets__cards">
-      <div
-        *ngFor="let participative of participatives"
-        class="assets__card"
-      >
+      <div *ngFor="let participative of participatives" class="assets__card">
         <app-realty-card [realty]="participative"></app-realty-card>
       </div>
     </div>

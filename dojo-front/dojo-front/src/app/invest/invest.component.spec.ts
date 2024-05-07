@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {InvestComponent} from './invest.component';
+import { InvestComponent } from './invest.component';
 
 describe('InvestPageComponent', () => {
   let component: InvestComponent;
@@ -8,9 +8,8 @@ describe('InvestPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InvestComponent ]
-    })
-    .compileComponents();
+      declarations: [InvestComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

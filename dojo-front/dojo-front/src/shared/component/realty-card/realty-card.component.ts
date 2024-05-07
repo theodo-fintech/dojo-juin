@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AssetsService } from 'src/shared/services/assets.service';
 import { RealtiesService } from 'src/shared/services/realties.service';
@@ -14,23 +14,23 @@ export class RealtyCardComponent {
   realty!: Realty;
 
   @Output()
-  realtyUpdated = new EventEmitter<boolean>()
+  realtyUpdated = new EventEmitter<boolean>();
 
   constructor(
     public router: Router,
     private realtiesService: RealtiesService,
-    private assetsService: AssetsService
+    private assetsService: AssetsService,
   ) {}
 
   buyProperty() {
     this.realtiesService.buyRealty(this.realty.id).subscribe((_) => {
-      this.realtyUpdated.emit(true)
+      this.realtyUpdated.emit(true);
     });
   }
 
   sellProperty() {
     this.assetsService.sellRealty(this.realty.id).subscribe((_) => {
-      this.realtyUpdated.emit(true)
+      this.realtyUpdated.emit(true);
     });
   }
 }

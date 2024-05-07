@@ -17,7 +17,7 @@ export class InvestComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private realtiesService: RealtiesService
+    private realtiesService: RealtiesService,
   ) {}
 
   ngOnInit() {

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {combineLatest, Observable, tap, timer} from 'rxjs';
-import {Transaction} from './interfaces/transaction.interface';
-import {TransactionService} from './services/transaction.service';
-import {UserService} from './services/user.service';
+import { Component, OnInit } from '@angular/core';
+import { combineLatest, Observable, tap, timer } from 'rxjs';
+import { Transaction } from './interfaces/transaction.interface';
+import { TransactionService } from './services/transaction.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -11,21 +11,21 @@ import {UserService} from './services/user.service';
 })
 export class HomeComponent implements OnInit {
   transactions$!: Observable<Transaction[]>;
-  amount: number | null = null
+  amount: number | null = null;
 
   constructor(
     private transactionService: TransactionService,
-    private userService: UserService
+    private userService: UserService,
   ) {}
 
   ngOnInit() {
     this.transactions$ = this.transactionService.fetchTransactions();
-    combineLatest(timer(7200000,7200000),this.userService.fetchUserAmount())
+    combineLatest(timer(5000, 5000), this.userService.fetchUserAmount())
       .pipe(
-        tap(([_, amount])=>{
-          this.amount = amount
-        })
+        tap(([_, amount]) => {
+          this.amount = amount;
+        }),
       )
-      .subscribe()
+      .subscribe();
   }
 }

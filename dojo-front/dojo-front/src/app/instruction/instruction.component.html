@@ -1,9 +1,12 @@
 <div *ngIf="!isLoading; else loading" class="instruction-container">
   <div class="player-level">
-    <span>Votre niveau : {{userLevel}}</span>
+    <span>Votre niveau : {{ userLevel }}</span>
   </div>
-  <h2>Votre prochaine étape : </h2>
-  <div [innerHTML]="templateMap.get(userLevel)" class="instruction-container-body"></div>
+  <h2>Votre prochaine étape :</h2>
+  <div
+    [innerHTML]="templateMap.get(userLevel)"
+    class="instruction-container-body"
+  ></div>
 </div>
 
 <ng-template #loading>

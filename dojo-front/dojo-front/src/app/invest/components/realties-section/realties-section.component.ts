@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {LegacyPageEvent as PageEvent} from '@angular/material/legacy-paginator';
-import {Realty} from 'src/shared/interface/realty';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { LegacyPageEvent as PageEvent } from '@angular/material/legacy-paginator';
+import { Realty } from 'src/shared/interface/realty';
 
 @Component({
   selector: 'app-realties-section',
@@ -9,7 +9,7 @@ import {Realty} from 'src/shared/interface/realty';
 })
 export class RealtiesSectionComponent {
   @Input() realties!: Realty[];
-  @Output() realtiesUpdated = new EventEmitter<boolean>()
+  @Output() realtiesUpdated = new EventEmitter<boolean>();
 
   pageSize!: number;
   currentPageIndex!: number;
@@ -27,6 +27,6 @@ export class RealtiesSectionComponent {
   }
 
   refreshRealties() {
-    this.realtiesUpdated.emit(true)
+    this.realtiesUpdated.emit(true);
   }
 }
