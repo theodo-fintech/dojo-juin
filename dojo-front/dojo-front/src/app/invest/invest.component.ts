@@ -39,4 +39,8 @@ export class InvestComponent implements OnInit {
   get type() {
     return this.filtersForm.get('type');
   }
+
+  refreshRealties() {
+    this.availableRealties$ = this.realtiesService.fetchRealties();
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { Router } from '@angular/router';
 import { AssetsService } from 'src/shared/services/assets.service';
 import { RealtiesService } from 'src/shared/services/realties.service';
@@ -13,6 +13,9 @@ export class RealtyCardComponent {
   @Input()
   realty!: Realty;
 
+  @Output()
+  realtyUpdated = new EventEmitter<boolean>()
+
   constructor(
     public router: Router,
     private realtiesService: RealtiesService,
@@ -21,17 +24,13 @@ export class RealtyCardComponent {
 
   buyProperty() {
     this.realtiesService.buyRealty(this.realty.id).subscribe((_) => {
-      this.refreshPage();
+      this.realtyUpdated.emit(true)
     });
   }
 
   sellProperty() {
     this.assetsService.sellRealty(this.realty.id).subscribe((_) => {
-      this.refreshPage();
+      this.realtyUpdated.emit(true)
     });
-  }
-
-  private refreshPage() {
-    window.location.reload();
   }
 }

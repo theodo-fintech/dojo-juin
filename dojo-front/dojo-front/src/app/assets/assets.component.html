@@ -5,7 +5,7 @@
     </div>
     <div class="assets__cards">
       <div *ngFor="let apartment of apartments" class="assets__card">
-        <app-realty-card [realty]="apartment"></app-realty-card>
+        <app-realty-card [realty]="apartment" (realtyUpdated)="refreshRealties()"></app-realty-card>
       </div>
     </div>
   </div>

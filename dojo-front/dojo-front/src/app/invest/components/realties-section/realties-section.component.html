@@ -11,7 +11,7 @@
   </p>
   <div class="property-cards">
     <div *ngFor="let realty of pagedRealties" class="property-cards__card">
-      <app-realty-card [realty]="realty"></app-realty-card>
+      <app-realty-card [realty]="realty" (realtyUpdated)="refreshRealties()"></app-realty-card>
     </div>
   </div>
   <mat-paginator
