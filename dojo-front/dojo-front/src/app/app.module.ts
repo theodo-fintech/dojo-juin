@@ -5,12 +5,6 @@ import { registerLocaleData } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import localeFr from '@angular/common/locales/fr';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from '../shared/guard/auth.guard';
 import { SharedModule } from '../shared/shared.module';
@@ -28,6 +22,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InstructionComponent } from './instruction/instruction.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { MatMenuModule } from '@angular/material/menu';
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 registerLocaleData(localeFr);
 
@@ -49,16 +47,14 @@ registerLocaleData(localeFr);
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    MatPaginatorModule,
-    MatCardModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    MatButtonModule,
     MatMenuModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatPaginatorModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR' },
