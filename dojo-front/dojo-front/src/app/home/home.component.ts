@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {combineLatest, Observable, tap, timer} from 'rxjs';
 import {Transaction} from './interfaces/transaction.interface';
 import {TransactionService} from './services/transaction.service';
 import {UserService} from './services/user.service';
@@ -11,7 +11,7 @@ import {UserService} from './services/user.service';
 })
 export class HomeComponent implements OnInit {
   transactions$!: Observable<Transaction[]>;
-  amount$!: Observable<number>;
+  amount: number | null = null
 
   constructor(
     private transactionService: TransactionService,
@@ -20,8 +20,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.transactions$ = this.transactionService.fetchTransactions();
-    setInterval(() => {
-      this.amount$ = this.userService.fetchUserAmount()
-    }, 7200000);
+    combineLatest(timer(7200000,7200000),this.userService.fetchUserAmount())
+      .pipe(
+        tap(([_, amount])=>{
+          this.amount = amount
+        })
+      )
+      .subscribe()
   }
 }
