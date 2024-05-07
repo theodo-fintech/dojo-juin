@@ -4,11 +4,11 @@ import { REALTY_TYPE, Realty } from '../../shared/interface/realty';
 import { UserService } from '../home/services/user.service';
 
 @Component({
-  selector: 'app-assets',
-  templateUrl: './assets.component.html',
-  styleUrls: ['./assets.component.scss'],
+  selector: 'app-owned-realties',
+  templateUrl: './owned-realties.component.html',
+  styleUrls: ['./owned-realties.component.scss'],
 })
-export class AssetsComponent implements OnInit {
+export class OwnedRealtiesComponent implements OnInit {
   apartments: Realty[] = [];
   participatives: Realty[] = [];
 

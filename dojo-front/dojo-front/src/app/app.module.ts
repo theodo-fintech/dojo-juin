@@ -10,7 +10,7 @@ import { AuthGuard } from '../shared/guard/auth.guard';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AssetsComponent } from './assets/assets.component';
+import { OwnedRealtiesComponent } from './owned-realties/owned-realties.component';
 import { TransactionComponent } from './home/components/transaction/transaction.component';
 import { HomeComponent } from './home/home.component';
 import { MoneyPipe } from './home/pipes/money.pipe';
@@ -36,7 +36,7 @@ registerLocaleData(localeFr);
     NavbarComponent,
     TransactionComponent,
     InvestComponent,
-    AssetsComponent,
+    OwnedRealtiesComponent,
     MoneyPipe,
     LoginComponent,
     RealtiesSectionComponent,
