@@ -24,3 +24,18 @@
     justify-content: space-evenly;
   }
 }
+
+::ng-deep {
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #8775ff;
+    border-radius: 12px;
+  }
+
+  .invest[_ngcontent-ng-c3762595575] .mat-card[_ngcontent-ng-c3762595575] *[_ngcontent-ng-c3762595575] {
+    color: #111139;
+  }
+
+  .mat-mdc-select-value-text {
+    color: #111139;
+  }
+}
