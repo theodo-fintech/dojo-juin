@@ -25,7 +25,7 @@ déboguer votre site pour débloquer des fonctionnalités ou même en développe
 L’une des valeurs de Sipios est le pragmatisme. Cela se voit tout au long de nos journées et passe par des gestes
 simples comme le Andon. Ce mot japonais signifie “lanterne” et cela veut dire que chez nous toutes les personnes, peu
 importe leur poste, posent des questions aux autres pour se débloquer de situation ou demander de l’aide. Et cela va
-dans les deux sens, même Thibault, l’EM ici présent, Andon des développeurs pour l’aider à avancer. Donc si vous vous
+dans les deux sens, même nos EM, andon des développeurs pour les aider à avancer. Donc si vous vous
 sentez bloqué ou que vous avez une question, interpellez nous !
 
 # Setup
@@ -35,7 +35,7 @@ Ouvrir un nouveau codespace puis :
 **Démarrer le back**
 - Ouvrir un nouveau terminal
 - Rendez vous à la source du projet back `cd dojo-bff/dojo-bff`
-- Lancer la commandes `sdk install java`
+- Lancer la commandes `sdk install java 17.0.10-albba`
 - Lorsque l’on vous demande si vous voulez utiliser java 17 en tant que version par défaut : répondre « oui ».
 - Lancer le projet avec `mvn spring-boot:run`
 
