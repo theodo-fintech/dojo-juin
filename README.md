@@ -1,4 +1,4 @@
-# Dojo Damido
+# Dojo Kretz
 
 L’objectif de ce dojo est de vous immerger dans la vie d’un Sipionaute au travers d’un jeu d’investissement immobilier.
 Vous allez commencer avec un capital de départ et un appartement dans lequel vous vivez ! Votre mission ? Réussir à se
