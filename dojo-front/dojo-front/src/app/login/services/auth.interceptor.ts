@@ -12,21 +12,26 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+  ) {}
 
   intercept(
     request: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     return next
       .handle(request)
       .pipe(
-        catchError((error: HttpErrorResponse) => this.handleUnauthorized(error))
+        catchError((error: HttpErrorResponse) =>
+          this.handleUnauthorized(error),
+        ),
       );
   }
 
   private handleUnauthorized(
-    error: HttpErrorResponse
+    error: HttpErrorResponse,
   ): Observable<HttpEvent<unknown>> {
     if (error && error.status === 401) {
       this.authService.logout();

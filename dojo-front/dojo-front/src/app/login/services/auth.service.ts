@@ -18,7 +18,7 @@ export class AuthService {
         {
           email,
         },
-        { withCredentials: true }
+        { withCredentials: true },
       )
       .pipe(tap(() => this._isLoggedIn.next(true)));
   }

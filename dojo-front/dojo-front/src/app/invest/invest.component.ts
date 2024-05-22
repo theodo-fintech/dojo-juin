@@ -17,7 +17,7 @@ export class InvestComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private realtiesService: RealtiesService
+    private realtiesService: RealtiesService,
   ) {}
 
   ngOnInit() {
@@ -38,5 +38,9 @@ export class InvestComponent implements OnInit {
 
   get type() {
     return this.filtersForm.get('type');
+  }
+
+  refreshRealties() {
+    this.availableRealties$ = this.realtiesService.fetchRealties();
   }
 }

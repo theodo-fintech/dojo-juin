@@ -1,4 +1,7 @@
-<mat-card [ngClass]="realty.rent === 0 ? 'scoring-defects':''" class="property-card">
+<mat-card
+  [ngClass]="realty.rent === 0 ? 'scoring-defects' : ''"
+  class="property-card"
+>
   <mat-card-content class="property-card__card-content">
     <img
       [src]="'assets/images/' + realty.image"
@@ -36,5 +39,7 @@
 </mat-card>
 
 <ng-template #alertMessage>
-  <div class="warning-message">Votre bien est une passoire énergétique, pensez à le rénover</div>
+  <div class="warning-message">
+    Votre bien est une passoire énergétique, pensez à le rénover
+  </div>
 </ng-template>

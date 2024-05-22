@@ -1,8 +1,10 @@
 <div class="container">
   <div class="balance">
     <h1>Solde</h1>
-    <ng-container *ngIf="amount !=null; else emptyAmount">
-      <span class="amount-value">{{ amount | currency : "EUR" : "symbol" : "1.0-0" }}</span>
+    <ng-container *ngIf="amount != null; else emptyAmount">
+      <span class="amount-value">{{
+        amount | currency: "EUR" : "symbol" : "1.0-0"
+      }}</span>
     </ng-container>
   </div>
   <div class="transactions">

@@ -5,18 +5,12 @@ import { registerLocaleData } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import localeFr from '@angular/common/locales/fr';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from '../shared/guard/auth.guard';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AssetsComponent } from './assets/assets.component';
+import { OwnedRealtiesComponent } from './owned-realties/owned-realties.component';
 import { TransactionComponent } from './home/components/transaction/transaction.component';
 import { HomeComponent } from './home/home.component';
 import { MoneyPipe } from './home/pipes/money.pipe';
@@ -26,8 +20,12 @@ import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './login/services/auth.interceptor';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InstructionComponent } from './instruction/instruction.component';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 registerLocaleData(localeFr);
 
@@ -38,7 +36,7 @@ registerLocaleData(localeFr);
     NavbarComponent,
     TransactionComponent,
     InvestComponent,
-    AssetsComponent,
+    OwnedRealtiesComponent,
     MoneyPipe,
     LoginComponent,
     RealtiesSectionComponent,
@@ -49,16 +47,14 @@ registerLocaleData(localeFr);
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    MatPaginatorModule,
-    MatCardModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    MatButtonModule,
     MatMenuModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatPaginatorModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR' },
